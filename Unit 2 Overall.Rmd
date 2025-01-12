@@ -36,7 +36,7 @@ Histogram
 iris %>% ggplot(aes(x = Petal.Length)) + geom_histogram() + ggtitle("Histogram of Petal Length")
 
 
-# You Try It!  investigate the distribuion of the city miles per gallon variable for compact cars.  
+# You Try It!  investigate the distribution of the city miles per gallon variable for compact cars.  
 
 mpg[mpg$class == "compact",] %>% ggplot(aes(x = cty)) + geom_histogram()
 
