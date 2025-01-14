@@ -1,24 +1,50 @@
-# Visualization: ggplot2  
+# React + TypeScript + Vite
 
-This is the Folder for Unit 2 Material!
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Asynch Material
+Currently, two official plugins are available:
 
-### The code used in the Asynch material  
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Unit 2 Overall.Rmd:
+## Expanding the ESLint configuration
 
-### Powerpoint Slides used in the Asynch material (pdf version on 2DS)  
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-Week_2_Standardized.pptx:  
+- Configure the top-level `parserOptions` property like this:
 
-### CSV files  
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-Education_Income.csv
-PlayersBBall.csv
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-## Live Session Material
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-### For LIve Session Unit 2.pptx
-
-List of items to complete for Live Session
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```

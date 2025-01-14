@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Dark theme styles for Recharts components */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #333333;
+}
+
+.recharts-text {
+  fill: #e0e0e0;
+}
+
+.recharts-default-tooltip {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+  color: #e0e0e0 !important;
+}
+
+.recharts-tooltip-label {
+  color: #e0e0e0 !important;
+}
+
+.recharts-legend-item-text {
+  color: #e0e0e0 !important;
+}
