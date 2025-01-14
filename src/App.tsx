@@ -30,8 +30,11 @@ function App() {
   useEffect(() => {
     const loadData = async () => {
       try {
+        // Get the base URL from Vite's import.meta.env
+        const baseUrl = import.meta.env.BASE_URL;
+
         // Load NBA Players data
-        const playersResponse = await fetch('/PlayersBBall.csv');
+        const playersResponse = await fetch(`${baseUrl}PlayersBBall.csv`);
         const playersText = await playersResponse.text();
         const playersParsed = Papa.parse<PlayerData>(playersText, {
           header: true,
@@ -39,7 +42,7 @@ function App() {
         });
 
         // Load Education Income data
-        const educationResponse = await fetch('/Education_Income.csv');
+        const educationResponse = await fetch(`${baseUrl}Education_Income.csv`);
         const educationText = await educationResponse.text();
         const educationParsed = Papa.parse<EducationData>(educationText, {
           header: true,
