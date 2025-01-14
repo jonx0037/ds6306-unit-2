@@ -1,13 +1,73 @@
-# React + TypeScript + Vite
+# NBA Player Analysis Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite application for visualizing NBA player statistics and analysis. This project includes interactive visualizations using Recharts to explore player heights, weights, positions, and their evolution over time.
 
-Currently, two official plugins are available:
+This project was forked from [MSDS_6306_Doing-Data-Science](https://github.com/BivinSadler/MSDS_6306_Doing-Data-Science.git) and enhanced with React-based visualizations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Repository
 
-## Expanding the ESLint configuration
+- GitHub: [https://github.com/jonx0037/ds6306-unit-2](https://github.com/jonx0037/ds6306-unit-2)
+- Live Demo: [https://jonx0037.github.io/ds6306-unit-2/](https://jonx0037.github.io/ds6306-unit-2/)
+
+## Contact
+
+Jonathan Rocha - jarocha@smu.edu
+
+## Features
+
+- Height and weight relationship analysis by position
+- Position distribution visualization
+- Height distribution across positions
+- Height evolution over time
+- 3D visualization of player metrics
+- Education and income correlation analysis
+
+## Local Development
+
+1. Clone the repository:
+```bash
+git clone https://github.com/jonx0037/ds6306-unit-2.git
+cd ds6306-unit-2
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open http://localhost:5173 in your browser
+
+## Deployment
+
+This project is automatically deployed to GitHub Pages using GitHub Actions. The deployment process is triggered whenever changes are pushed to the main branch.
+
+### Manual Deployment
+
+To deploy manually:
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
+
+### Deployment Configuration
+
+- The application is configured to deploy to GitHub Pages using the `gh-pages` package
+- Vite is configured with the correct base URL for GitHub Pages
+- GitHub Actions workflow automatically handles deployment on push to main
+- All assets (CSV files, images) are served from the `public` directory
+
+## ESLint Configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
@@ -48,3 +108,18 @@ export default tseslint.config({
   },
 })
 ```
+
+## Technologies Used
+
+- React 18
+- TypeScript
+- Vite
+- Recharts
+- TailwindCSS
+- Papa Parse (for CSV parsing)
+
+## Data Sources
+
+The application uses two main data sources:
+- `public/PlayersBBall.csv`: NBA player statistics
+- `public/Education_Income.csv`: Education and income correlation data
